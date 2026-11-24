@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 5</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="calculator.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="logo" role="img" aria-label="Логотип сайта: Задание 5">З5</div>
+            <span class="site-name">Задание 5</span>
+            <nav class="site-nav" aria-label="Основное меню">
+                <ul class="menu">
+                    <li><a href="#links">Ссылки</a></li>
+                    <li><a href="#schedule">Таблица</a></li>
+                    <li><a href="#questionnaire">Форма</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 id="top">Задание 5</h1>
+
+        <section id="calculator" class="section-card calculator-section" aria-labelledby="calculator-title">
+            <h2 id="calculator-title">Калькулятор стоимости заказа</h2>
+            <p>Выберите товар, укажите количество и нажмите «Рассчитать».</p>
+            <form id="order-form" novalidate>
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="product">Товар</label>
+                        <select id="product" name="product" aria-describedby="order-error">
+                            <option value="50">Ручка — 50 ₽ за шт.</option>
+                            <option value="120">Тетрадь — 120 ₽ за шт.</option>
+                            <option value="1500">Рюкзак — 1 500 ₽ за шт.</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="quantity">Количество товара</label>
+                        <input type="text" id="quantity" name="quantity" inputmode="numeric"
+                               autocomplete="off" placeholder="Например, 2"
+                               aria-describedby="quantity-hint order-error" required>
+                        <p id="quantity-hint" class="field-hint">Целое число больше нуля. Только цифры, без пробелов.</p>
+                    </div>
+                </div>
+                <button type="submit" class="button">Рассчитать</button>
+                <p id="order-error" class="error-message" role="alert"></p>
+                <output id="order-total" class="order-total" for="product quantity" aria-live="polite"></output>
+            </form>
+            <noscript>
+                <p>Для работы калькулятора включите JavaScript в браузере.</p>
+            </noscript>
+        </section>
+
+        <div class="content-grid">
+            <section id="links" class="section-card links-section" aria-labelledby="links-title">
+                <h2 id="links-title">Список гиперссылок</h2>
+                <p><a href="https://kubsu.ru">Гиперссылка на сайт университета</a></p>
+                <p><a href="https://kubsu.ru">HTTPS включительно</a></p>
+
+                <figure>
+                    <img src="images/1.jpg" alt="Главный вход Кубанского государственного университета" width="547" height="365">
+                    <figcaption>Кубанский государственный университет</figcaption>
+                </figure>
+
+                <p><a href="pages/inner.html">Ссылка на внутреннюю страницу</a></p>
+                <p><a href="index.html">Ссылка на главную страницу</a></p>
+                <p><a href="#top">Ссылка на id (вверх)</a></p>
+                <p><a href="search.html?q=kubsu&amp;page=2&amp;sort=name">Ссылка с тремя параметрами</a></p>
+                <p><a href="../../index.html">Страница на 2 каталога выше</a></p>
+
+                <p>Я учусь в Кубанском государственном университете на первом курсе.</p>
+
+                <h3>Фотография университета</h3>
+                <figure>
+                    <a href="https://kubsu.ru">
+                        <img src="images/2.jpg" alt="Фасад Кубанского государственного университета и цветы" width="1280" height="853">
+                    </a>
+                    <figcaption>Кубанский государственный университет</figcaption>
+                </figure>
+
+                <p><a href="">Пустой href</a></p>
+                <p><a href="https://kubsu.ru">https://kubsu.ru</a></p>
+                <p><a href="https://kubsu.ru" rel="nofollow">Ссылка, запрещённая для поисковиков</a></p>
+                <p><a href="secret.html">Страница, запрещённая для индексации</a></p>
+
+                <ol>
+                    <li><a href="https://kubsu.ru">КубГУ</a></li>
+                    <li><a href="https://google.com">Google</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ol>
+
+                <p><a href="ftp://files.kubsu.ru/">FTP-ссылка</a></p>
+            </section>
+
+            <section id="schedule" class="section-card table-section" aria-labelledby="schedule-title">
+                <h2 id="schedule-title">Расписание занятий</h2>
+                <div class="table-wrapper">
+                    <table aria-labelledby="schedule-title">
+                        <thead>
+                            <tr>
+                                <th scope="col">Предмет</th>
+                                <th scope="col">Преподаватель</th>
+                                <th scope="col">Аудитория</th>
+                                <th scope="col">Оценка</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Программирование</td>
+                                <td>Михайличенко</td>
+                                <td>107</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>Мат.анализ</td>
+                                <td>Силинская С.М</td>
+                                <td>129</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>Физика</td>
+                                <td>Бурим А.А</td>
+                                <td>103</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>Английский</td>
+                                <td>Баклагова</td>
+                                <td>344</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>Дифференциальные уравнения</td>
+                                <td>Чубырь Н.О</td>
+                                <td>128</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">Всего дисциплин</td>
+                                <td>5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="questionnaire" class="section-card form-section" aria-labelledby="questionnaire-title">
+                <h2 id="questionnaire-title">Анкета</h2>
+                <form action="#" method="post" class="form-grid">
+                    <div class="form-field">
+                        <label for="fio">ФИО</label>
+                        <input type="text" id="fio" name="fio">
+                    </div>
+                    <div class="form-field">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-field">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="form-field">
+                        <label for="birth">Дата рождения</label>
+                        <input type="date" id="birth" name="birth">
+                    </div>
+                    <fieldset class="full-width">
+                        <legend>Пол</legend>
+                        <div class="choice-group">
+                            <label class="choice"><input type="radio" name="sex" value="m"> мужской</label>
+                            <label class="choice"><input type="radio" name="sex" value="f"> женский</label>
+                        </div>
+                    </fieldset>
+                    <div class="form-field">
+                        <label for="lang">Любимый язык программирования</label>
+                        <select id="lang" name="lang[]" multiple>
+                            <option value="pascal">Pascal</option>
+                            <option value="c">C</option>
+                            <option value="cpp">C++</option>
+                            <option value="js">JavaScript</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="bio">Биография</label>
+                        <textarea id="bio" name="bio" rows="5"></textarea>
+                    </div>
+                    <div class="full-width">
+                        <label class="choice"><input type="checkbox" name="contract"> С контрактом ознакомлен(а)</label>
+                    </div>
+                    <div class="full-width">
+                        <input class="button" type="submit" value="Сохранить">
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; ПИ22</p>
+    </footer>
+</body>
+</html>
